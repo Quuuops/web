@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+
+{% block main_content %}
+    <div class="register-container">
+        <h2>Register</h2>
+        
+        <!-- Форма для регистрации -->
+        <form method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+            {{ form.username.label_tag }} {{ form.username }}
+            {{ form.email.label_tag }} {{ form.email }}
+            {{ form.password1.label_tag }} {{ form.password1 }}
+            {{ form.password2.label_tag }} {{ form.password2 }}
+            <input type="submit" value="Register">
+        </form>
+
+        <!-- Ссылка для перехода на страницу входа -->
+        <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+    </div>
+{% endblock %}

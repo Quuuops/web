@@ -1,0 +1,43 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Убирает горизонтальный скроллбар */
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+}
+
+.App .Content {
+  padding-top: 100px;
+  text-align: center;
+}
+
+#header, #footer {
+  background-color: #333; /* Задайте цвет фона вашего хедера и футера */
+  color: white;
+  text-align: center;
+  padding: 15px;
+  position: fixed; /* Закрепляет хедер и футер на экране */
+  width: 100%;
+  z-index: 1000; /* Позволяет хедеру и футеру находиться поверх остальных элементов */
+}
+
+#header {
+  top: 0;
+}
+
+#footer {
+  bottom: 0;
+}
+/* styles.css */
+
+#main-content-container {
+  margin-top: 60px; /* Высота вашего хедера */
+  margin-bottom: 60px; /* Высота вашего футера */
+  padding: 20px; /* Пространство вокруг контента */
+  overflow-y: auto; /* Включает вертикальный скроллбар при необходимости */
+}

@@ -1,0 +1,29 @@
+.product-list {
+    padding: 20px;
+}
+
+.product-list h2 {
+    color: #333;
+}
+
+.product-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-list li {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.product-list li h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.product-list li p {
+    margin: 0;
+    color: #666;
+}

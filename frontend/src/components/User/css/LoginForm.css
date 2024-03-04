@@ -1,0 +1,18 @@
+.rounded-t-5 {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+/* Увеличьте размер и примените тень к лейблам */
+label.text-white {
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); /* Добавьте тень */
+    display: block;
+}
+
+@media (max-width: 550px) {
+  .rounded-tr-lg-0 {
+    border-top-right-radius: 0.5rem;
+    border-bottom-left-radius: 0rem;
+  }
+}

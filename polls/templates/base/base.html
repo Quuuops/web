@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Johny</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}" />
+</head>
+<body>
+
+<!-- Вставляем React контейнер -->
+<div id="root"></div>
+
+
+<!-- Вставляем header.html -->
+
+<!-- Ваш основной контент здесь -->
+    {% block main_content %}
+    {% endblock %}
+<!-- Вставляем дополнительный контент после основного контента -->
+{% block additional_content %}{% endblock %}
+
+<!-- Вставляем footer.html -->
+
+
+<script src="{% static 'js/main.js' %}">
+</script>
+
+</body>
+</html>
