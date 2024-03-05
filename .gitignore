@@ -1,0 +1,5 @@
+/johny/settings.py
+/johny/media/
+/frontend/node_modules
+/frontend/dist
+.gitignore

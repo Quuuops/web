@@ -27,3 +27,6 @@
     margin: 0;
     color: #666;
 }
+.Navfooter button:hover {
+    cursor: pointer;
+}

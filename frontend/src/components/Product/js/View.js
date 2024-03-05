@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {useParams} from 'react-router-dom'; // Импортируем useParams для получения параметров из URL
-import {Container, Row, Col, Card, Button} from 'react-bootstrap';
+import {useParams} from 'react-router-dom';
+import {Container, Row, Col, Card} from 'react-bootstrap';
 import DeleteProductButton from "./DeleteProduct";
 import EditProductButton from "./EditProduct";
 import productEndpoints from '../../Api/product';
