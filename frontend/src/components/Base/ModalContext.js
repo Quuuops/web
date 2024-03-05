@@ -13,11 +13,35 @@ export const ModalProvider = ({children}) => {
     const [formData, setFormData] = useState({}); // Состояние для данных формы
 
 
-    const openModal = (content, initialFormData = {}) => {
+const openModal = (content, initialFormData = {}) => {
+    const formDataWithFiles = { ...initialFormData };
+    if (initialFormData.images) {
+        const imageURL = initialFormData.images;
+
+        fetch(imageURL)
+            .then(response => response.blob())
+            .then(imageBlob => {
+
+                const imageFile = new File([imageBlob], 'image.png', { type: 'image/png' });
+
+                formDataWithFiles.images = imageFile;
+
+                setModalContent(content);
+                setFormData(formDataWithFiles);
+                setShowModal(true);
+            })
+            .catch(error => {
+                console.error('Error loading image:', error);
+                setModalContent(content);
+                setFormData(initialFormData);
+                setShowModal(true);
+            });
+    } else {
         setModalContent(content);
-        setFormData(initialFormData); // Установите начальные значения данных формы
+        setFormData(initialFormData);
         setShowModal(true);
-    };
+    }
+};
 
 
     const closeModal = () => {
@@ -31,7 +55,7 @@ export const ModalProvider = ({children}) => {
         const {name, value, type} = event.target;
 
         if (type === 'file') {
-            const selectedFile = event.target.files[0]; // Получаем выбранный файл
+            const selectedFile = event.target.files[0];
             setFormData({...formData, ['images']: selectedFile});
         } else {
             setFormData({...formData, [name]: value});
